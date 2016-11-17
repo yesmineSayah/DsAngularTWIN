@@ -1,6 +1,7 @@
 <select ng-model="consumption" ng-change="simulate()">
     <option ng-repeat="car in cars" value="{{car.consumption}}">{{car.name}} ({{car.consumption}}%)</option>
-</select> Select trip destinations :
+</select> 
+Select trip destinations :
 <select ng-model="city">
     <option ng-repeat="city in cities">{{city}}</option>
 </select>
