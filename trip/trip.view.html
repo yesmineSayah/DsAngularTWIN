@@ -1,0 +1,25 @@
+From :
+<select ng-model="from" ng-click="search()">
+    <option ng-repeat="city in cities">{{city}}</option>
+</select>
+To :
+<select ng-model="to" ng-click="search()">
+    <option ng-repeat="city in cities">{{city}}</option>
+</select><br>
+
+Distance : <input ng-model="distance" type="number"> {{distance | miles}}<br>
+Time : <input ng-model="time" type="number">
+{{time | time}}<br>
+
+
+<table>
+    <tr>     
+        <td><button ng-click="addTrip()">Add Trip</button></td>
+        <td><button ng-click="updateTrip()">Update Trip</button><br></td>
+        <td><a href="#/simulation">try simulation</a></td>
+    </tr>
+</table>
+
+<input ng-model="city">
+<button ng-click="addCity()">Add City</button><br>
+cities : <b ng-repeat="city in cities">{{city}},</b>

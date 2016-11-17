@@ -1,0 +1,38 @@
+<select ng-model="consumption" ng-change="simulate()">
+    <option ng-repeat="car in cars" value="{{car.consumption}}">{{car.name}} ({{car.consumption}}%)</option>
+</select> Select trip destinations :
+<select ng-model="city">
+    <option ng-repeat="city in cities">{{city}}</option>
+</select>
+<button ng-click="addToTravelPlan(city)">add {{city}} to Travel Plan</button>
+<button ng-click="clearTravelPlan()">clear Travel Plan</button>
+<br> <b>Travel Plan : </b> <b ng-repeat="city in travelPlan track by $index"> {{city}}, </b>
+<hr>
+<table>
+    <tr>
+        <td><b>distance </b></td>
+        <td><b>trip time </b></td>
+        <td><b>fuel price </b></td>
+    </tr>
+    <tr>
+        <td>
+            <ul>
+                <li>{{simulation.distance}} KM</li>
+                <li>{{simulation.distance | miles}}</li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li>{{simulation.time}} minutes</li>
+                <li>{{simulation.time | time}}</li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li>{{simulation.price}} tnd</li>
+                <li>{{simulation.price | money:"usd"}}</li>
+                <li>{{simulation.price | money:"eur"}}</li>
+            </ul>
+        </td>
+    </tr>
+</table>
